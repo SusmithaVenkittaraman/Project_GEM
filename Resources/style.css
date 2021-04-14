@@ -1,0 +1,153 @@
+              body {
+              font: 20px Montserrat, sans-serif;
+              line-height: 1.8;
+              background-color:#3596B5;
+            }
+            h1{
+              font: Montserrat, sans-serif;
+              color:#296073;
+              font-size: 25px;
+              font-weight: bolder;
+              letter-spacing: 2px;
+              text-align: left;
+            }
+            h2{
+              font: Montserrat, sans-serif;
+              color:#296073;
+              font-size: 18px;
+              font-weight: bolder;
+              letter-spacing: 2px;
+            }
+            .row
+            {
+              padding-bottom: 10px;
+              margin: 0px;
+              text-align: center;
+            }
+            p {
+              font-size: 16px;
+              font: Montserrat, sans-serif;
+              text-align: justify;
+            }
+            .text-info {
+              font-size: 12px;
+              font: Montserrat, sans-serif;
+              color:#296073;
+            }
+            .margin {margin-bottom: 45px;}
+            .bg-1 { 
+              background-color:rgb(236, 234, 234);
+              color: #296073;
+            }
+            .bg-2 { 
+              background-color: #4f5768; 
+              color: #ffffff;
+            }
+            .bg-3 { 
+              background-color: #ffffff; 
+              color: #555555;
+            }
+            .bg-4 { 
+              background-color: #2f2f2f; 
+              color: #fff;
+            }
+            .container-fluid {
+              padding-top: 70px;
+              padding-bottom: 70px;
+            }
+            .menu-container {
+              width: 100%;
+            }
+            .navbar {
+              padding-top: 15px;
+              padding-bottom: 15px;
+              border: 0;
+              border-radius: 0;
+              margin-bottom: 0;
+              font-size: 12px;
+              letter-spacing: 5px;
+            }
+            .menu-item{
+              font-weight: bolder;
+              font-size: 15px;
+              letter-spacing: 4px;
+            }
+            .dropdown-item {
+                font-weight: bolder;
+                font-size: 12px;
+                letter-spacing: 2px;
+            }
+            .navbar-brand
+            {
+              font-weight: bolder;
+              font-size: 35px;
+              letter-spacing: 4px;
+              padding-top: 8px;
+            }
+            .navbar-brand a:hover{
+              color:salmon !important;
+              font-weight: bolder;
+              text-decoration: none;
+            }
+            .navbar-nav  li a:hover {
+              color:salmon !important;
+              font-weight: bolder;
+              /* text-decoration:underline; */
+            }
+    
+            .active { 
+              background-color: #C0C0C0; 
+              pointer-events: none;
+            } 
+
+            @media (max-width: 769px) {
+              .navbar {
+                background-color:#d4d7d8;
+                color:white;
+                /* color: white; */
+              }
+            }         
+
+            .img-home{
+              width:350px;
+              height:280px; 
+              float: left;
+            }
+            .img-list{
+              width:220px;
+              height:160px; 
+              float: left;
+            }
+            .img-list-big{
+              text-align: center;
+              width:325px;
+              height:225px;
+            }
+            .img-big{
+              width:550px;
+              height:400px;
+            }
+
+            .img-border{
+              border-width: 3px;
+              border-color: salmon;
+              border-style:ridge;
+              /* pointer-events: none; */
+            }
+
+            .table{
+              text-align: left;
+              font-size: 14px;
+              font: Montserrat, sans-serif;
+              color:#296073;
+              /* width: 80%; */
+            }
+
+            .table tbody tr{
+              border-left:#296073;
+              border-right:#296073;
+              border-style: solid;
+              border-width: 0.5px;
+
+            }
+            
