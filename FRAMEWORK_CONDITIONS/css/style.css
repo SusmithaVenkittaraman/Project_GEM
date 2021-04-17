@@ -8,7 +8,15 @@ body {
   #map,
   body,
   html {
-    height: 80%;
-    width: 80%;
+    height: 50%;
+    width: 50%;
   }
   
+
+.bar {
+  fill: orange;
+}
+
+.bar:hover {
+  fill: green;
+}
