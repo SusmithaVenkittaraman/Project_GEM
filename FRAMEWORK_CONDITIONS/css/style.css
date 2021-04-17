@@ -13,10 +13,40 @@ body {
   }
   
 
-.bar {
+.bar1 {
   fill: orange;
 }
 
-.bar:hover {
+.bar1:hover {
   fill: green;
+}
+
+.bar2 {
+  fill: green;
+}
+
+.bar2:hover {
+  fill: orange;
+}
+
+
+.tooltip {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  padding: 2px;
+  /* padding-top: 2px; */
+  font: 12px sans-serif;
+  color: white;
+  text-align: center;
+  background: #551aaf;
+  border: 0;
+  border-radius: 10px;
+}
+
+.axisText {
+  font-family: sans-serif;
+  font-weight: bold;
+  fill: #551aaf;
+  text-anchor: middle;
 }
