@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Behaviour and Attitudes</title>
+
+ <!-- Our CSS -->
+ <!-- <link rel="stylesheet" type="text/css" href="static/css/style.css"> -->
+ <!-- Our Plotly -->
+ <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+</head>
+<body>
+  <div class="container">
+    <div class="row margin-top-50">
+      <div class="col-md-3">
+        <aside class="filters">
+          <div class="panel panel-default">
+            <div class="panel-heading" >Filter Search</div>
+            <div class="panel-body">
+              <form id='form'>
+                <div class="form-group">
+                  <ul class="list-group" id="filters">
+                    <li class="filter list-group-item">
+                      <label for="country">Select a Country</label>
+                      <div id="country2">
+                        <input type="checkbox" name="United States" value="United States" class="checkbox" checked>
+                        <label for="United States"> United States</label><br>
+                    </div>
+                    </li>
+                    <li class="filter list-group-item">
+                      <label for="Parameters">Enter the Parameter of interest</label>
+                      <div id="Parameters1">
+                        <select id="parameters">
+                            <option value="Perceived_opportunities" id='parameters_option'>Perceived_opportunities</option>
+                          </select>
+                    </div>
+                    </li>
+                  </ul>
+                </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+      <div id='lineplot'></div>
+      </div>
+      </div>
+    
+     <!-- Bootstrap core JS-->
+     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+     <!-- Third party plugin JS-->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
+    <!-- d3 JavaScript -->
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <!-- Core theme JS-->
+    <script type="text/javascript" src="static/js/logic.js"></script>
+
+</body>
+</html>
