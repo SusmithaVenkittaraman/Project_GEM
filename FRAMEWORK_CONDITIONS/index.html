@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Global Entrepreneurship Monitor</title>
+
+        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+        <link rel="stylesheet" href="css/style.css">
+        <!-- <link rel="stylesheet" href="../Resources/style.css" /> -->
+      </head>
+<body>
+      <table>
+        <tr>
+          <td>
+            <fieldset>      
+              <legend>Select</legend>  
+              <table>
+                <tr>
+                  <td>
+                    <div id="dropdown_country">
+                      <h5>Select Country:</h5>
+                      <select id="selCountry"></select>
+                    </div>
+                  </td>
+                  <td style="width: 400px;">
+                    <div id="selIndicators">     
+                  </div>     
+                  </td>
+                  <td>
+                    <input type="submit" value="Submit now" onclick="submit_event()" /> 
+                  </td>
+                </tr>
+              </table>   
+          </fieldset> 
+          </td>
+          <td>
+            <div class="chart-container">
+              <div class="doughnut-chart-container">
+                <canvas id="doughnut-chartcanvas-1"></canvas>
+              </div>
+          
+              <!-- <div class="doughnut-chart-container">
+                <canvas id="doughnut-chartcanvas-2"></canvas>
+              </div> -->
+            </div>          
+          </td>
+        </tr>
+      </table>
+      </td>
+    </tr>
+  </table>
+  
+  
+
+  
+  <!-- <div id="map">
+  </div> -->
+  <div id="bar">
+    <!-- We append our chart here. -->
+  </div>
+ 
+</body>
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+<script src="static/config.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.1.1/dist/chart.min.js"></script>
+<script src="static/logic.js"></script>
+<!-- <script src="static/logic_d3.js"></script> -->
+<script src="static/bar.js"></script>
+</html>
