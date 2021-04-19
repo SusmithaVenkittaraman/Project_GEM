@@ -1,3 +1,4 @@
+
 d3.json("http://localhost:5000/api").then(function(data_list) {
 
   console.log(data_list["country"]);
@@ -17,7 +18,14 @@ d3.json("http://localhost:5000/api").then(function(data_list) {
   .data(data_list["indicator_keys"]) 
   .enter().append('label')
   .html(function(d, i) {
-    return '<br/><input type="checkbox" id="' + data_list["indicator_values"][i] + '"  for="'+ data_list["indicator_values"][i] + '">' + d;
+    if(i != 0)
+    {
+      return '<br/><input type="checkbox" id="' + data_list["indicator_values"][i] + '"  for="'+ data_list["indicator_values"][i] + '">' + d;
+    }
+    else
+    {
+      return '<input type="checkbox" id="' + data_list["indicator_values"][i] + '"  for="'+ data_list["indicator_values"][i] + '">' + d;
+    }
   })
 
 });
@@ -35,7 +43,15 @@ function submit_event()
     // console.log(countries[i])
     if(countries[i].selected)
     {
-      selected_country = countries[i].value;
+      if(countries[i].value != "Select")
+      {
+        selected_country = countries[i].value;
+      }
+      else
+      {
+        alert("Please Select Country");
+        return;
+      }
     }
   }
 
@@ -54,34 +70,17 @@ function submit_event()
       index ++;
     }
   }
+
+  if(index != 2)
+  {
+    alert("Please Select 2 Indicators")
+    return;
+  }
   
   console.log(selected_indicators);
 
-//   d3.json("http://localhost:5000/chart/"+selected_country).then(function(data_list) {
-
-//   console.log(data_list["country"]);
-
-//   d3.select("#selCountry")
-//     .selectAll("option")
-//     .data(data_list["country"])
-//     .enter()
-//     .append("option")
-//     .text(function(d) { return d; })
-//     .property("value",data_list["country"][0])
-//     .attr("value", function (d, i) {
-//         return d;
-//     });
-    
-//   d3.select('#selIndicators').selectAll('label')
-//   .data(data_list["indicator_keys"]) 
-//   .enter().append('label')
-//   .html(function(d, i) {
-//     return '<br/><input type="checkbox" id="' + data_list["indicator_values"][i] + '"  for="'+ data_list["indicator_values"][i] + '">' + d;
-//   })
-
-// });
-
 d3.json("http://localhost:5000/chart/"+selected_country).then(function(data) {
+
     // Once we get a response, send the data.features object to the createFeatures function
     console.log(data['labels']);
 
@@ -128,9 +127,45 @@ d3.json("http://localhost:5000/chart/"+selected_country).then(function(data) {
       data: data1,
       options: option1
     });
-
-    // chartjs.update();
   });
 
-  barChart(selected_indicators[0],selected_indicators[1])
+  barChart(selected_country, selected_indicators[0],selected_indicators[1])
+}
+
+function reset_event()
+{
+  var countries = d3.selectAll("option").nodes()
+  // console.log(countries)
+
+  for(var i = 0; i< countries.length; i++)
+  {
+    // console.log(countries[i])
+    if(countries[i].selected)
+    {
+      if(countries[i].value === "Select")
+      {
+        countries[i].selected = true;
+      }
+      else
+      {
+        countries[i].selected = false;
+      }
+    }
+  }
+
+  var selected_indicators = []
+  var index= 0
+  var checkboxes = d3.selectAll("input").nodes()
+  // console.log(c);
+  for(var item = 0; item < checkboxes.length; item++)
+  {
+    checkboxes[item].checked = false; 
+    // if(checkboxes[item].checked)
+    // {
+    //   console.log(checkboxes[item].id);
+    //   selected_indicators[index] = checkboxes[item].id;
+    //   index ++;
+    // }
+  }
+
 }
