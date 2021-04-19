@@ -1,5 +1,4 @@
-
-d3.json("http://localhost:5000/country").then(function(data_list) {
+d3.json("http://localhost:5000/api").then(function(data_list) {
 
   console.log(data_list["country"]);
 
@@ -57,14 +56,43 @@ function submit_event()
   }
   
   console.log(selected_indicators);
-}
 
-d3.json("http://localhost:5000/chart").then(function(data) {
+//   d3.json("http://localhost:5000/chart/"+selected_country).then(function(data_list) {
+
+//   console.log(data_list["country"]);
+
+//   d3.select("#selCountry")
+//     .selectAll("option")
+//     .data(data_list["country"])
+//     .enter()
+//     .append("option")
+//     .text(function(d) { return d; })
+//     .property("value",data_list["country"][0])
+//     .attr("value", function (d, i) {
+//         return d;
+//     });
+    
+//   d3.select('#selIndicators').selectAll('label')
+//   .data(data_list["indicator_keys"]) 
+//   .enter().append('label')
+//   .html(function(d, i) {
+//     return '<br/><input type="checkbox" id="' + data_list["indicator_values"][i] + '"  for="'+ data_list["indicator_values"][i] + '">' + d;
+//   })
+
+// });
+
+d3.json("http://localhost:5000/chart/"+selected_country).then(function(data) {
     // Once we get a response, send the data.features object to the createFeatures function
     console.log(data['labels']);
 
-    let chart = document.getElementById("doughnut-chartcanvas-1")
+    if(window.myNewChart1 != null){
+      window.myNewChart1.destroy();
+  }
 
+    var chart = document.getElementById("doughnut-chartcanvas-1")
+
+    console.log(window.myNewChart1);
+    
     var data1 = {
       labels: data['labels'],
       datasets: [{
@@ -95,12 +123,14 @@ d3.json("http://localhost:5000/chart").then(function(data) {
       }
     };
 
-    var chartjs = new Chart(chart, {
+    window.myNewChart1 = new Chart(chart, {
       type: "doughnut",
       data: data1,
       options: option1
     });
 
-   
-
+    // chartjs.update();
   });
+
+  barChart(selected_indicators[0],selected_indicators[1])
+}

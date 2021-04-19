@@ -20,7 +20,7 @@ CORS(app)
 engine = create_engine(f'postgresql://{user_name}:{password}@localhost:5432/gem_db')
 connection = engine.connect()
 
-@app.route("/country")
+@app.route("/api")
 def loadData():
 
     countries = pd.read_sql("SELECT country FROM framework_conditions GROUP BY country HAVING COUNT(year)>=17 ORDER BY country", connection)
@@ -59,13 +59,13 @@ def loadData():
         
     data_dict["indicator_keys"] = keys
     data_dict["indicator_values"] = values
-    
+
     return json.dumps(data_dict)
 
-@app.route("/chart")
-def doughnutFunction():
+@app.route("/chart/<country>")
+def doughnutFunction(country):
 
-    countryData = pd.read_sql("SELECT * FROM framework_conditions WHERE country= 'United States' AND year=2019",connection)
+    countryData = pd.read_sql("SELECT * FROM framework_conditions WHERE country= '"+country+"' AND year=2019",connection)
 
     labels=['financing_for_entrepreneurs','governmental_support_and_policies', 'taxes_and_bureaucracy',
        'governmental_programs','basic_school_entrepreneurial_education_and_training', 'post_school_entrepreneurial_education_and_training', 'r&d_transfer',
@@ -81,10 +81,10 @@ def doughnutFunction():
 
     return json.dumps(c)
 
-@app.route("/api")
-def index():
+@app.route("/bar/<param1>/<param2>")
+def index(param1, param2):
     # if(request.method == "POST"):
-    data = pd.read_sql("SELECT year,financing_for_entrepreneurs,governmental_support_and_policies FROM framework_conditions WHERE country= 'United States' ORDER BY year",connection)
+    data = pd.read_sql("SELECT year,"+ param1 +","+ param2 +" FROM framework_conditions WHERE country= 'United States' ORDER BY year",connection)
     # data = data.set_index(["financing_for_entrepreneurs"])
     # data = data.set_index(["year"])
     # print(data.values)
@@ -94,11 +94,11 @@ def index():
 
     for index, row in data.iterrows():
         x.append(row["year"])
-        y.append(row["financing_for_entrepreneurs"])
-        y.append(row["governmental_support_and_policies"])
+        y.append(row[param1])
+        y.append(row[param2])
     f = {}
     f["year"]=x
-    f["financing_for_entrepreneurs"]=y
+    f["points"]=y
     print(json.dumps(f))
     # print(data.to_json())
     # json1 = data.to_json()

@@ -1,4 +1,5 @@
-
+function barChart(param1, param2)
+{
 // Define SVG area dimensions
 var svgWidth = 1070;
 var svgHeight = 500;
@@ -15,8 +16,12 @@ var chartMargin = {
 var chartWidth = svgWidth - chartMargin.left - chartMargin.right;
 var chartHeight = svgHeight - chartMargin.top - chartMargin.bottom + 9.5;
 
-// Select body, append SVG area to it, and set the dimensions
 var svg = d3
+  .select("#bar")
+
+svg.html("")
+// Select body, append SVG area to it, and set the dimensions
+svg = d3
   .select("#bar")
   .append("svg")
   .attr("height", svgHeight)
@@ -28,12 +33,12 @@ var chartGroup = svg.append("g")
   .attr("transform", `translate(${chartMargin.left}, ${chartMargin.top})`);
 
 // Load data from hours-of-tv-watched.csv
-d3.json("http://localhost:5000/api").then(function(data){
+d3.json("http://localhost:5000/bar/"+param1+"/"+param2).then(function(data){
 
   // Print the tvData
 //   console.log(data);
   console.log(data["year"]);
-  console.log(data["financing_for_entrepreneurs"])
+  console.log(data["points"])
 
   var barSpacing = 5; // desired space between each bar
 //   var scaleY = 10; // 10x scale on rect height
@@ -79,7 +84,7 @@ chartGroup.append("g")
   .call(yAxis);
 
   var barGroup = chartGroup.selectAll(".bar")
-    .data(data["financing_for_entrepreneurs"])
+    .data(data["points"])
     .enter()
     .append("rect")
     // .classed("bar", true)
@@ -113,3 +118,4 @@ chartGroup.append("g")
 // .catch(function(error) {
 //   console.log(error);
 // });
+}

@@ -6,22 +6,22 @@ body {
   
   /* set map, body, and html to 100% of the screen size */
   /* #map,*/
-body, 
+/* body, 
    html {
     height: 90%;
     width: 90%;
-  } 
+  }  */
   
   .chart-container {
     width: 80%;
-    height: 700px;
+    height: 300px;
     margin: 0 auto;
   }
   
   .doughnut-chart-container {
     height: 600px;
     width: 400px;
-    float: left;
+    float: right;
   }
 
 .bar1 {
