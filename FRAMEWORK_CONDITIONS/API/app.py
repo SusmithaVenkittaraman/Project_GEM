@@ -32,7 +32,7 @@ def loadData():
         'Governmental Programs':'governmental_programs',
         'Basic School Entrepreneurial Education and Training':'basic_school_entrepreneurial_education_and_training', 
         'Post School Entrepreneurial Education and Training':'post_school_entrepreneurial_education_and_training', 
-        'R&D Transfer':'r&d_transfer',
+        'Research and Development':'research_and_development',
         'Commercial and Professional Infrastructure':'commercial_and_professional_infrastructure',
         'Internal Market Dynamics':'internal_market_dynamics', 
         'Internal Market Openness':'internal_market_openness',
@@ -68,7 +68,7 @@ def doughnutFunction(country):
     countryData = pd.read_sql("SELECT * FROM framework_conditions WHERE country= '"+country+"' AND year=2019",connection)
 
     labels=['financing_for_entrepreneurs','governmental_support_and_policies', 'taxes_and_bureaucracy',
-       'governmental_programs','basic_school_entrepreneurial_education_and_training', 'post_school_entrepreneurial_education_and_training', 'r&d_transfer',
+       'governmental_programs','basic_school_entrepreneurial_education_and_training', 'post_school_entrepreneurial_education_and_training', 'research_and_development',
        'commercial_and_professional_infrastructure','internal_market_dynamics', 'internal_market_openness','physical_and_services_infrastructure', 'cultural_and_social_norms']
     dataPoints=[]
 
@@ -81,10 +81,10 @@ def doughnutFunction(country):
 
     return json.dumps(c)
 
-@app.route("/bar/<param1>/<param2>")
-def index(param1, param2):
+@app.route("/bar/<country>/<param1>/<param2>")
+def index(country, param1, param2):
     # if(request.method == "POST"):
-    data = pd.read_sql("SELECT year,"+ param1 +","+ param2 +" FROM framework_conditions WHERE country= 'United States' ORDER BY year",connection)
+    data = pd.read_sql("SELECT year,"+ param1 +","+ param2 +" FROM framework_conditions WHERE country= '"+country+"' ORDER BY year",connection)
     # data = data.set_index(["financing_for_entrepreneurs"])
     # data = data.set_index(["year"])
     # print(data.values)
