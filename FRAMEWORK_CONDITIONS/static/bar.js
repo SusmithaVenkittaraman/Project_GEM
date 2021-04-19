@@ -1,4 +1,5 @@
-function barChart(param1, param2)
+
+function barChart(country, param1, param2)
 {
 // Define SVG area dimensions
 var svgWidth = 1070;
@@ -33,7 +34,7 @@ var chartGroup = svg.append("g")
   .attr("transform", `translate(${chartMargin.left}, ${chartMargin.top})`);
 
 // Load data from hours-of-tv-watched.csv
-d3.json("http://localhost:5000/bar/"+param1+"/"+param2).then(function(data){
+d3.json("http://localhost:5000/bar/"+ country+ "/" + param1 + "/" + param2).then(function(data){
 
   // Print the tvData
 //   console.log(data);
@@ -87,7 +88,6 @@ chartGroup.append("g")
     .data(data["points"])
     .enter()
     .append("rect")
-    // .classed("bar", true)
     .attr("class",function(d, i) { if(i%2 ==0) return "bar1"; else return "bar2";})
     .attr("width", barWidth/2)
     .attr("height", d => d * 100)
