@@ -1,8 +1,8 @@
 /* remove default margin and padding from body */
-body {
+/* body {
     padding: 0;
     margin: 0;
-  }
+  } */
   
   /* set map, body, and html to 100% of the screen size */
   /* #map,*/
@@ -13,13 +13,13 @@ body {
   }  */
   
   .chart-container {
-    width: 80%;
+    width: 600px;
     height: 300px;
     margin: 0 auto;
   }
   
   .doughnut-chart-container {
-    height: 600px;
+    height: 300px;
     width: 400px;
     float: right;
   }
