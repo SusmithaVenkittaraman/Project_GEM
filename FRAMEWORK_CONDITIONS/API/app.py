@@ -67,12 +67,18 @@ def doughnutFunction(country):
 
     countryData = pd.read_sql("SELECT * FROM framework_conditions WHERE country= '"+country+"' AND year=2019",connection)
 
-    labels=['financing_for_entrepreneurs','governmental_support_and_policies', 'taxes_and_bureaucracy',
+    labels=['Financing for Entrepreneurs', 'Governmental Support and Policies', 'Taxes and Bureaucracy', 
+    'Governmental Programs', 'Basic School Entrepreneurial Education and Training', 
+    'Post School Entrepreneurial Education and Training', 'Research and Development', 
+    'Commercial and Professional Infrastructure', 'Internal Market Dynamics', 'Internal Market Openness', 
+    'Physical and Services Infrastructure', 'Cultural and Social Norms']
+
+    l = ['financing_for_entrepreneurs','governmental_support_and_policies', 'taxes_and_bureaucracy',
        'governmental_programs','basic_school_entrepreneurial_education_and_training', 'post_school_entrepreneurial_education_and_training', 'research_and_development',
        'commercial_and_professional_infrastructure','internal_market_dynamics', 'internal_market_openness','physical_and_services_infrastructure', 'cultural_and_social_norms']
     dataPoints=[]
 
-    for item in labels:
+    for item in l:
         dataPoints.append(countryData[item][0])
 
     c = {}
@@ -84,7 +90,7 @@ def doughnutFunction(country):
 @app.route("/bar/<country>/<param1>/<param2>")
 def index(country, param1, param2):
     # if(request.method == "POST"):
-    data = pd.read_sql("SELECT year,"+ param1 +","+ param2 +" FROM framework_conditions WHERE country= '"+country+"' ORDER BY year",connection)
+    data = pd.read_sql("SELECT year,"+ param1 +","+ param2 +" FROM framework_conditions WHERE country= '"+country+"' AND year > 2002 ORDER BY year",connection)
     # data = data.set_index(["financing_for_entrepreneurs"])
     # data = data.set_index(["year"])
     # print(data.values)
