@@ -15,7 +15,7 @@
 <body>
   <table>
     <tr>
-      <td style="vertical-align: text-top;">
+      <td style="vertical-align: text-top; width: 40%;">
         <fieldset >      
           <legend>Select</legend>  
           <table>
@@ -45,12 +45,14 @@
           </table> 
           </fieldset> 
       </td>
-      <td>
+      <td style="width: 10%;">
+        <div>
+          <input type="button" id="btn_toggle" value="Toggle Doughnut View" onclick="changeType()"></input>
+        </div>
+      </td>
+      <td style="width: 50%; height: 200px; vertical-align: top; text-align: right;">
         <div class="chart-container">
-          <canvas id="doughnut-chartcanvas-1"></canvas>
-          <div>
-            <input type="button" id="btn_toggle" value="Toggle Doughnut View" onclick="changeType()"></input>
-          </div>
+          <canvas id="doughnut-chartcanvas-1" style="width: 50%; height: 40%;"></canvas>
         </div>   
       </td>
     </tr>

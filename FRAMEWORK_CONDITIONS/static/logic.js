@@ -2,6 +2,12 @@
   var btn_toggle = document.getElementById("btn_toggle")
   btn_toggle.style.display = "none";
 
+  var selected_country = "United States";
+  var selected_indicators=[]
+
+  selected_indicators[0]="financing_for_entrepreneurs";
+  selected_indicators[1]="governmental_support_and_policies";
+
   function handleHover(evt, item, legend) {
     legend.chart.data.datasets[0].backgroundColor.forEach((color, index, colors) => {
       colors[index] = index === item.index || color.length === 9 ? color : color + '4D';
@@ -47,67 +53,54 @@ d3.json("http://localhost:5000/api").then(function(data_list) {
   })
 });
 
-    // function toggle(myNewChart1)
-    // {
-    //   if (myNewChart1.options.cutout) 
-    //   {
-    //     myNewChart1.options.cutout = 0;
-    //   } 
-    //   else 
-    //   {
-    //     myNewChart1.options.cutout = '50%';
-    //   }
-    // myNewChart1.update();
-    // }
-
 function submit_event()
 {
 
-  var countries = d3.selectAll("option").nodes()
-  // console.log(countries)
+  // var countries = d3.selectAll("option").nodes()
+  // // console.log(countries)
 
-  var selected_country
+  // var selected_country
 
-  for(var i = 0; i< countries.length; i++)
-  {
-    // console.log(countries[i])
-    if(countries[i].selected)
-    {
-      if(countries[i].value != "Select")
-      {
-        selected_country = countries[i].value;
-      }
-      else
-      {
-        alert("Please Select Country");
-        return;
-      }
-    }
-  }
+  // for(var i = 0; i< countries.length; i++)
+  // {
+  //   // console.log(countries[i])
+  //   if(countries[i].selected)
+  //   {
+  //     if(countries[i].value != "Select")
+  //     {
+  //       selected_country = countries[i].value;
+  //     }
+  //     else
+  //     {
+  //       alert("Please Select Country");
+  //       return;
+  //     }
+  //   }
+  // }
 
-  console.log(selected_country);
+  // console.log(selected_country);
 
-  var selected_indicators = []
-  var index= 0
-  var checkboxes = d3.selectAll("input").nodes()
-  // console.log(c);
-  for(var item = 0; item < checkboxes.length; item++)
-  {
-    if(checkboxes[item].checked)
-    {
-      console.log(checkboxes[item].id);
-      selected_indicators[index] = checkboxes[item].id;
-      index ++;
-    }
-  }
+  // var selected_indicators = []
+  // var index= 0
+  // var checkboxes = d3.selectAll("input").nodes()
+  // // console.log(c);
+  // for(var item = 0; item < checkboxes.length; item++)
+  // {
+  //   if(checkboxes[item].checked)
+  //   {
+  //     console.log(checkboxes[item].id);
+  //     selected_indicators[index] = checkboxes[item].id;
+  //     index ++;
+  //   }
+  // }
 
-  if(index != 2)
-  {
-    alert("Please Select 2 Indicators")
-    return;
-  }
+  // if(index != 2)
+  // {
+  //   alert("Please Select 2 Indicators")
+  //   return;
+  // }
   
-  console.log(selected_indicators);
+  // console.log(selected_indicators);
 
 d3.json("http://localhost:5000/chart/"+selected_country).then(function(data) {
 
@@ -138,14 +131,14 @@ d3.json("http://localhost:5000/chart/"+selected_country).then(function(data) {
       cutout: "50%",
       plugins: {
         legend: {
-          itemMaxWidth: 400,
-          itemWrap: true,
-          position: 'right',
+         // itemMaxWidth: 50,
+         // itemWrap: true,
+          position: 'bottom',
           onHover: handleHover,
-          onLeave: handleLeave,
-          labels: {
-            usePointStyle: true
-          }
+          onLeave: handleLeave
+          // labels: {
+          //   usePointStyle: true
+          // }
         },
         // title: {
         //   display: true,
