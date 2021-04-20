@@ -88,12 +88,23 @@ chartGroup.append("g")
     .data(data["points"])
     .enter()
     .append("rect")
-    .attr("class",function(d, i) { if(i%2 ==0) return "bar1"; else return "bar2";})
+    .attr("fill","black")
+    // .attr("hover","white")
+    // .attr("class",function(d, i) { if(i%2 ==0) return "bar1"; else return "bar2";})
     .attr("width", barWidth/2)
-    .attr("height", d => d * 100)
+    .attr("height", d => d * 95)
     .attr("x", function(d, i) { if(i%2 ==0) return(i * barWidth + barSpacing); else return ((i-1) * barWidth + barWidth/2 + 7);})
-    .attr("y", d => chartHeight - d * 100);
-    
+    .attr("y", d => chartHeight - d * 95)
+//     .on('mouseover', function (d, i) {
+//         d3.select(this).transition()
+//              .duration('50')
+//              .attr('opacity', '.85')
+//    .on('mouseout', function (d, i) {
+//         d3.select(this).transition()
+//              .duration('50')
+//              .attr('opacity', '1');
+
+
     var toolTip = d3.tip()
     .attr("class", "tooltip")
     .offset([10, 0])
@@ -108,10 +119,16 @@ chartGroup.append("g")
   // Step 8: Create event listeners to display and hide the tooltip
   // ==============================
   barGroup.on("mouseover", function(data) {
+    d3.select(this).transition()
+                 .duration('50')
+                 .attr('opacity', '.5')
     toolTip.show(data, this);
   })
     // onmouseout event
     .on("mouseout", function(data, index) {
+    d3.select(this).transition()
+                 .duration('50')
+                 .attr('opacity', '1');        
       toolTip.hide(data);
     });
 })

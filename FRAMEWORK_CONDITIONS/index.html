@@ -4,55 +4,64 @@
         <meta charset="UTF-8">
         <title>Global Entrepreneurship Monitor</title>
 
-        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
+        <!-- <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"> -->
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
-        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+        <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
         <link rel="stylesheet" href="css/style.css">
         <!-- <link rel="stylesheet" href="../Resources/style.css" /> -->
       </head>
 <body>
-      <table >
-        <tr>
-          <td>
-            <fieldset>      
-              <legend>Select</legend>  
-              <table>
-                <tr>
-                  <td>
-                    <div id="dropdown_country">
-                      <h5>Select Country:</h5>
-                      <select id="selCountry"></select>
-                    </div>
-                  </td>
-                  <td style="width: 400px;">
-                    <div id="selIndicators">     
-                  </div>     
-                  </td>
-                  <td>
-                    <input type="submit" value="Submit now" onclick="submit_event()" /> 
-                  </td>
-                </tr>
-              </table>   
-          </fieldset> 
-          </td>
-          <td>
-            <div class="chart-container">
-              <div class="doughnut-chart-container">
-                <canvas id="doughnut-chartcanvas-1"></canvas>
+  <table>
+    <tr>
+      <td style="vertical-align: text-top;">
+        <fieldset >      
+          <legend>Select</legend>  
+          <table>
+            <tr>
+              <td style="vertical-align: top;">
+                <div id="dropdown_country" style="padding:0px; margin: 0px;vertical-align: text-top;">
+                  <h4>Country:</h4>
+                  <select id="selCountry" style="padding:0px; margin: 0px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: small;">
+                    <option>Select</option>
+                  </select>
+                </div>
+              </td >
+              <td style="vertical-align: top;">
+                <h4>Indicators:</h4>
+                <div style="vertical-align: top;">
+                <div id="selIndicators">    
+                </div>
+              </div>     
+              </td>
+              <td >
+                <div>
+                <input type="submit" value="Submit" onclick="submit_event()" />  
+                <input type="reset" value="Reset" onclick="reset_event()">
               </div>
-            </div>          
-          </td>
-        </tr>
-        <tr>
-        </tr>
-      </table>
-      <div id="bar">
-        <!-- We append our chart here. -->
-      </div>
+              </td>
+            </tr>
+          </table> 
+          </fieldset> 
+      </td>
+      <td>
+        <div class="chart-container">
+          <canvas id="doughnut-chartcanvas-1"></canvas>
+          <div>
+            <input type="button" id="btn_toggle" value="Toggle Doughnut View" onclick="changeType()"></input>
+          </div>
+        </div>   
+      </td>
+    </tr>
+    <!-- <tr>
+      <td> -->
+      <!-- </td>
+    </tr> -->
+  </table>  
+  <div id="bar">
+    <!-- We append our chart here. -->
+  </div>
 </body>
 <script src="https://d3js.org/d3.v5.min.js"></script>
 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
