@@ -6,22 +6,32 @@
   
   /* set map, body, and html to 100% of the screen size */
   /* #map,*/
-/* body, 
-   html {
-    height: 90%;
-    width: 90%;
-  }  */
+body
+   /* html  */
+   {
+     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+     font-size:small;
+    /* height: 90%;
+    width: 90%; */
+  } 
   
   .chart-container {
-    width: 600px;
-    height: 300px;
-    margin: 0 auto;
+    width: 550px;
+    margin: 0px;
+    padding: 0px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+     font-size:small;
+    /* height: 400px; */
+    /*float: right;*/
+   /* vertical-align: top;*/
   }
-  
+
   .doughnut-chart-container {
-    height: 300px;
-    width: 400px;
-    float: right;
+    /* height: 400px; */
+    margin: 0px;
+    padding: 0px;
+    width: 550px;
+    /* float: right; */
   }
 
 .bar1 {
