@@ -1,5 +1,6 @@
 var queryURL="http://127.0.0.1:5000/"
 d3.json(queryURL).then(function(data){
+    console.log(data);
     plotting(data)
 })
 
@@ -61,7 +62,7 @@ function filter_Data(data,country,parameter){
         all_year_list.push(year_list);
         all_parameter_values.push(parameter_values);
         }
-    init(all_year_list,all_parameter_values);
+    init(all_year_list,all_parameter_values,country,parameter);
 }
 
 //plotting initial chart
@@ -80,21 +81,37 @@ function updatePlotly(){
   filter_Data(data,countries_checked,parameter_value)
 }
 
+function buttonclick(){
+    console.log("Reset clcicked");
+    //plotting initial chart
+    filter_Data(data,['United States'],'Perceived_opportunities')
+}
+
 // Call updatePlotly() when a change takes place to the DOM
 d3.selectAll("#parameters").on("change", updatePlotly);
 d3.selectAll("#country2").on("change",updatePlotly);
+d3.selectAll("#resetbutton").on("click",buttonclick);
 }
-
-function init(year,parameter_values){
+function init(year,parameter_values,country,parameter){
     var data = [];
     for(var i=0;i<year.length;i++){
     var trace = {
         x: year[i],
         y: parameter_values[i],
-        type: 'scatter'
+        type: 'scatter',
+        name: country[i]
       };
     data.push(trace)
     }
-      Plotly.newPlot('lineplot', data);
+    var layout = {
+        title:`Time series : Country Vs ${parameter}`,
+        xaxis: {
+            title: 'Year',
+          },
+          yaxis: {
+            title: `${parameter}`,
+          }
+      };
+      Plotly.newPlot('lineplot', data,layout);
 }
 
