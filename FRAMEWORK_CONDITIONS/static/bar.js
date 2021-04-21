@@ -1,3 +1,21 @@
+// '#d00000','#f94144','#f8961e','#ffd400','#90be6d','#43aa8b','#4d908e','#577590','#355070','#0077b6','#00b4d8','#4cc9f0'],
+
+var dict_colors = {
+  'financing_for_entrepreneurs': "#d00000",
+  'governmental_support_and_policies':"#f94144",
+  'taxes_and_bureaucracy':"#f8961e",
+  'governmental_programs':"#ffd400",
+  'basic_school_entrepreneurial_education_and_training':"#90be6d",
+  'post_school_entrepreneurial_education_and_training':"#43aa8b",
+  'research_and_development':"#4d908e",
+  'commercial_and_professional_infrastructure':"#577590",
+  'internal_market_dynamics':"#355070",
+  'internal_market_openness':"#0077b6",
+  'physical_and_services_infrastructure':"#00b4d8",
+  'cultural_and_social_norms':"#4cc9f0"
+}
+
+
 
 function barChart(country, param1, param2)
 {
@@ -88,7 +106,7 @@ chartGroup.append("g")
     .data(data["points"])
     .enter()
     .append("rect")
-    .attr("fill","black")
+    .attr("fill",function(d, i) { if(i%2 ==0) return dict_colors[param1]; else return dict_colors[param2];})
     // .attr("hover","white")
     // .attr("class",function(d, i) { if(i%2 ==0) return "bar1"; else return "bar2";})
     .attr("width", barWidth/2)

@@ -59,7 +59,7 @@ d3.json("http://localhost:5000/api").then(function(data_list) {
   // list.append('br')
 });
 
-function submit_event()
+function submit_country()
 {
 
   // var countries = d3.selectAll("option").nodes()
@@ -120,14 +120,15 @@ d3.json("http://localhost:5000/chart/"+selected_country).then(function(data) {
     var chart = document.getElementById("doughnut-chartcanvas-1")
 
     console.log(window.myNewChart1);
-    
+    // var a = [dict_colors[x] for (x in dict_colors)];
+
     var data1 = {
       labels: data['labels'],
       datasets: [{
           label: 'My First Dataset',
           data: data['dataPoints'],
-          backgroundColor: [
-            '#d00000','#f94144','#f8961e','#ffd400','#90be6d','#43aa8b','#4d908e','#577590','#355070','#0077b6','#00b4d8','#4cc9f0'],
+          backgroundColor:Object.values(dict_colors),
+          // [ '#d00000','#f94144','#f8961e','#ffd400','#90be6d','#43aa8b','#4d908e','#577590','#355070','#0077b6','#00b4d8','#4cc9f0'],
           hoverOffset: 10
         }]
     }
@@ -148,11 +149,11 @@ d3.json("http://localhost:5000/chart/"+selected_country).then(function(data) {
         },
         title: {
           display: true,
-          position:"bottom",
+          position:"top",
           text: "Distribution of Indicators for " + selected_country,
           labels: {
                   fontColor: "#333",
-                  fontSize: 5
+                  fontSize: 15
                 }
         },
       },
@@ -210,7 +211,10 @@ d3.json("http://localhost:5000/chart/"+selected_country).then(function(data) {
   //   window.myNewChart1.options.cutout = '50%';
   // }
   // window.myNewChart1.update();
+}
 
+function submit_indicators()
+{
   barChart(selected_country, selected_indicators[0],selected_indicators[1])
 }
 
