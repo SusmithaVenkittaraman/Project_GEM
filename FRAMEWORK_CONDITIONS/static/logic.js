@@ -40,17 +40,23 @@ d3.json("http://localhost:5000/api").then(function(data_list) {
     
   d3.select('#selIndicators').selectAll('label')
   .data(data_list["indicator_keys"]) 
-  .enter().append('label')
+  // .append('br')
+  .enter()
+  .append('label')
   .html(function(d, i) {
-    if(i != 0)
-    {
-      return '<br/><input type="checkbox" id="' + data_list["indicator_values"][i] + '"  for="'+ data_list["indicator_values"][i] + '">' + d;
-    }
-    else
-    {
-      return '<input type="checkbox" id="' + data_list["indicator_values"][i] + '"  for="'+ data_list["indicator_values"][i] + '">' + d;
-    }
+    // if(i != 0)
+    // {
+      return '<input type="checkbox" id="' + data_list["indicator_values"][i] + '"  for="'+ data_list["indicator_values"][i] + '"> ' + d;
+    // }
+    // else
+    // {
+    //   return '<input type="checkbox" id="' + data_list["indicator_values"][i] + '"  for="'+ data_list["indicator_values"][i] + '">' + d;
+    // }
   })
+  // .append('br')
+
+  // d3.select('#selIndicators').selectAll('label').append('br')
+  // list.append('br')
 });
 
 function submit_event()
@@ -133,21 +139,22 @@ d3.json("http://localhost:5000/chart/"+selected_country).then(function(data) {
         legend: {
          // itemMaxWidth: 50,
          // itemWrap: true,
-          position: 'bottom',
+          position: 'right',
           onHover: handleHover,
-          onLeave: handleLeave
-          // labels: {
-          //   usePointStyle: true
-          // }
+          onLeave: handleLeave,
+          labels: {
+            usePointStyle: true
+          }
         },
-        // title: {
-        //   display: true,
-        //   text: "Distribution of Indicators for " + selected_country,
-        //   labels: {
-        //           fontColor: "#333",
-        //           fontSize: 5
-        //         }
-        // },
+        title: {
+          display: true,
+          position:"bottom",
+          text: "Distribution of Indicators for " + selected_country,
+          labels: {
+                  fontColor: "#333",
+                  fontSize: 5
+                }
+        },
       },
       // elements: {
       //   arc: {
@@ -159,7 +166,7 @@ d3.json("http://localhost:5000/chart/"+selected_country).then(function(data) {
       layout: {
         padding:{
            left: 30,
-           top:0
+           top:20
           },
         margin:
         {
