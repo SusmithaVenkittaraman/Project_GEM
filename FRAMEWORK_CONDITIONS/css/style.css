@@ -10,13 +10,13 @@ body
    /* html  */
    {
      font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-     font-size:smaller;
+     font-size:small;
     /* height: 90%;
     width: 90%; */
   } 
   
   .chart-container {
-    width: 80%;
+    width: 70%;
     margin: 0px;
     padding: 0px;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -103,4 +103,10 @@ body
 }
 .navbar-dark{
 background-color: black;
+}
+
+.btn-style
+{
+  background-color: black;
+  border: grey;
 }
