@@ -113,19 +113,19 @@ chartGroup.append("g")
     .attr("height", d => d * 95)
     .attr("x", function(d, i) { if(i%2 ==0) return(i * barWidth + barSpacing); else return ((i-1) * barWidth + barWidth/2 + 7);})
     .attr("y", d => chartHeight - d * 95)
-//     .on('mouseover', function (d, i) {
-//         d3.select(this).transition()
-//              .duration('50')
-//              .attr('opacity', '.85')
-//    .on('mouseout', function (d, i) {
-//         d3.select(this).transition()
-//              .duration('50')
-//              .attr('opacity', '1');
+  //   .on('mouseover', function (d, i) {
+  //       d3.select(this).transition()
+  //            .duration('50')
+  //            .attr('opacity', '.85')});
+  //  .on('mouseout', function (d, i) {
+  //       d3.select(this).transition()
+  //            .duration('50')
+  //            .attr('opacity', '1')});
 
 
     var toolTip = d3.tip()
     .attr("class", "tooltip")
-    .offset([10, 0])
+    .offset([10, 10])
     .html(function(d) {
       return (`<br>value: ${d}`);
     });
