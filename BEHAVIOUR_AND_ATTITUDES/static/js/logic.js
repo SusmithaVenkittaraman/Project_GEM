@@ -35,6 +35,7 @@ parameters.splice(13,1);
 
 //Adding parameters to dropdown
 parameters.forEach(item=>{
+    item=item.replaceAll('_', ' ');
     let parameters_opt=d3.select("#parameters");
     let parameters_new_opt=parameters_opt.append("option")
     parameters_new_opt.text(item)
@@ -42,6 +43,8 @@ parameters.forEach(item=>{
 
 //filtering data and plotting the chart
 function filter_Data(data,country,parameter){
+    parameter=parameter.replaceAll(' ','_')
+    console.log(country)
     var all_year_list=[];
     var all_parameter_values=[];
     for(var i=0;i<country.length;i++){
@@ -68,9 +71,11 @@ function filter_Data(data,country,parameter){
 //plotting initial chart
 filter_Data(data,['United States'],'Perceived_opportunities')
 
-countries_checked=[]
+
 function updatePlotly(){
+    countries_checked=[]
     var boxes = d3.selectAll("input.checkbox:checked");
+    
     boxes.each(function() {
         if(countries_checked.includes(this.value)===false){
         countries_checked.push(this.value)
@@ -93,6 +98,7 @@ d3.selectAll("#country2").on("change",updatePlotly);
 d3.selectAll("#resetbutton").on("click",buttonclick);
 }
 function init(year,parameter_values,country,parameter){
+    parameter=parameter.replaceAll('_',' ');
     var data = [];
     for(var i=0;i<year.length;i++){
     var trace = {

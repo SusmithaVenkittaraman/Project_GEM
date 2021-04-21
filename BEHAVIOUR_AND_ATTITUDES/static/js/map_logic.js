@@ -20,9 +20,15 @@ var geojson;
 
 console.log(geoData)
 
+parameters=[]
 // Grab data with d3
 d3.json(geoData).then(function(data) {
 
+  Object.keys(data[0]).forEach(item=>{
+    parameters.push(item);
+});
+
+    console.log(data.features[0].properties)
     // Create a new choropleth layer
     geojson = L.choropleth(data, {
   
