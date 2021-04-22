@@ -6,14 +6,12 @@
   
   /* set map, body, and html to 100% of the screen size */
   /* #map,*/
-body
-   /* html  */
+/* body
+   html 
    {
      font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
      font-size:small;
-    /* height: 90%;
-    width: 90%; */
-  } 
+  }  */
   
   .chart-container {
     width: 80%;
