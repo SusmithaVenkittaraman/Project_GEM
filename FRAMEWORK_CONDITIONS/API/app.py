@@ -76,7 +76,6 @@ def doughnutFunction(country):
     l = ['financing_for_entrepreneurs','governmental_support_and_policies', 'taxes_and_bureaucracy',
        'governmental_programs','basic_school_entrepreneurial_education_and_training', 'post_school_entrepreneurial_education_and_training', 'research_and_development',
        'commercial_and_professional_infrastructure','internal_market_dynamics', 'internal_market_openness','physical_and_services_infrastructure', 'cultural_and_social_norms']
-       
     dataPoints=[]
 
     for item in l:

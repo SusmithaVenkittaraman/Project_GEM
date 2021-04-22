@@ -56,23 +56,29 @@ body
 
 .tooltip {
   position: absolute;
-  width: 60px;
-  height: 60px;
-  padding: 2px;
-  /* padding-top: 2px; */
+  width: 30px;
+  height: 30px;
+  /* padding: 2px; */
+  padding-top: 8px;
   font: 12px sans-serif;
   color: white;
   text-align: center;
-  background: #551aaf;
-  border: 0;
+  background: grey;
+  /* border-color: gray; */
+  border: 1;
   border-radius: 10px;
 }
 
 .axisText {
   font-family: sans-serif;
   font-weight: bold;
-  fill: #551aaf;
+  fill: grey;
   text-anchor: middle;
+}
+
+.legend
+{
+  font-size: 10px;
 }
 /* 
 .filters .panel-body {
@@ -103,10 +109,4 @@ body
 }
 .navbar-dark{
 background-color: black;
-}
-
-.btn-style
-{
-  background-color: black;
-  border: grey;
 }

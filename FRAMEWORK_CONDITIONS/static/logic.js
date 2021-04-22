@@ -6,8 +6,8 @@
   // var selected_country = "United States";
   // var selected_indicators=[]
 
-  // selected_indicators[0]="financing_for_entrepreneurs";
-  // selected_indicators[1]="governmental_support_and_policies";
+  // selected_indicators[0]="Financing for Entrepreneurs";
+  // selected_indicators[1]="Governmental Support and Policies";
 
   function handleHover(evt, item, legend) {
     legend.chart.data.datasets[0].backgroundColor.forEach((color, index, colors) => {
@@ -47,7 +47,7 @@ d3.json("http://localhost:5000/api").then(function(data_list) {
   .html(function(d, i) {
     // if(i != 0)
     // {
-      return '<input type="checkbox" id="' + data_list["indicator_values"][i] + '"  for="'+ data_list["indicator_values"][i] + '"> ' + d;
+      return '<input type="checkbox" id="' + data_list["indicator_keys"][i] + '"  for="'+ data_list["indicator_values"][i] + '"> ' + d;
     // }
     // else
     // {
@@ -164,25 +164,6 @@ d3.json("http://localhost:5000/chart/"+selected_country).then(function(data) {
         }
     }
     };
-
-    // {
-    //   responsive: true,
-    //   title: {
-    //     display: true,
-    //     position: "top",
-    //     text: "Doughnut Chart",
-    //     fontSize: 12,
-    //     fontColor: "black"
-    //   },
-    //   legend: {
-    //     display: true,
-    //     position: "bottom",
-    //     labels: {
-    //       fontColor: "#333",
-    //       fontSize: 8
-    //     }
-    //   }
-    // };
 
     window.myNewChart1 = new Chart(chart, {
       type: "doughnut",

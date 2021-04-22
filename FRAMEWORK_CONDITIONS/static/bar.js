@@ -1,34 +1,46 @@
 // '#d00000','#f94144','#f8961e','#ffd400','#90be6d','#43aa8b','#4d908e','#577590','#355070','#0077b6','#00b4d8','#4cc9f0'],
 
 var dict_colors = {
-  'financing_for_entrepreneurs': "#d00000",
-  'governmental_support_and_policies':"#f94144",
-  'taxes_and_bureaucracy':"#f8961e",
-  'governmental_programs':"#ffd400",
-  'basic_school_entrepreneurial_education_and_training':"#90be6d",
-  'post_school_entrepreneurial_education_and_training':"#43aa8b",
-  'research_and_development':"#4d908e",
-  'commercial_and_professional_infrastructure':"#577590",
-  'internal_market_dynamics':"#355070",
-  'internal_market_openness':"#0077b6",
-  'physical_and_services_infrastructure':"#00b4d8",
-  'cultural_and_social_norms':"#4cc9f0"
+  'Financing for Entrepreneurs': "#d00000",
+  'Governmental Support and Policies':"#f94144",
+  'Taxes and Bureaucracy':"#f8961e",
+  'Governmental Programs':"#ffd400",
+  'Basic School Entrepreneurial Education and Training':"#90be6d",
+  'Post School Entrepreneurial Education and Training':"#43aa8b",
+  'Research and Development':"#4d908e",
+  'Commercial and Professional Infrastructure':"#577590",
+  'Internal Market Dynamics':"#355070",
+  'Internal Market Openness':"#0077b6",
+  'Physical and Services Infrastructure':"#00b4d8",
+  'Cultural and Social Norms':"#4cc9f0"
 }
 
-
+var indicators={
+  'Financing for Entrepreneurs':'financing_for_entrepreneurs',
+  'Governmental Support and Policies':'governmental_support_and_policies', 
+  'Taxes and Bureaucracy':'taxes_and_bureaucracy',
+  'Governmental Programs':'governmental_programs',
+  'Basic School Entrepreneurial Education and Training':'basic_school_entrepreneurial_education_and_training', 
+  'Post School Entrepreneurial Education and Training':'post_school_entrepreneurial_education_and_training', 
+  'Research and Development':'research_and_development',
+  'Commercial and Professional Infrastructure':'commercial_and_professional_infrastructure',
+  'Internal Market Dynamics':'internal_market_dynamics', 
+  'Internal Market Openness':'internal_market_openness',
+  'Physical and Services Infrastructure':'physical_and_services_infrastructure', 
+  'Cultural and Social Norms':'cultural_and_social_norms'}
 
 function barChart(country, param1, param2)
 {
 // Define SVG area dimensions
-var svgWidth = 1070;
-var svgHeight = 500;
+var svgWidth = 1095;
+var svgHeight = 520;
 
 // Define the chart's margins as an object
 var chartMargin = {
   top: 10,
   right: 30,
-  bottom: 30,
-  left: 30
+  bottom: 50,
+  left: 50
 };
 
 // Define dimensions of the chart area
@@ -52,7 +64,7 @@ var chartGroup = svg.append("g")
   .attr("transform", `translate(${chartMargin.left}, ${chartMargin.top})`);
 
 // Load data from hours-of-tv-watched.csv
-d3.json("http://localhost:5000/bar/"+ country+ "/" + param1 + "/" + param2).then(function(data){
+d3.json("http://localhost:5000/bar/"+ country+ "/" + indicators[param1] + "/" + indicators[param2]).then(function(data){
 
   // Print the tvData
 //   console.log(data);
@@ -84,8 +96,8 @@ var yScale = d3.scaleLinear()
 // scale x to chart width
 var xScale = d3.scaleBand()
   .domain(data["year"])
-  .range([0, chartWidth])
-  .padding(0.15);
+  .range([0, chartWidth]);
+  // .padding(0.10);
 
 // create axes
 var yAxis = d3.axisLeft(yScale);
@@ -95,12 +107,14 @@ var xAxis = d3.axisBottom(xScale);
 chartGroup.append("g")
   .attr("transform", `translate(0, ${chartHeight})`)
   .call(xAxis);
+  // .text("Years");
 
 // set y to the y axis
 // This syntax allows us to call the axis function
 // and pass in the selector without breaking the chaining
 chartGroup.append("g")
   .call(yAxis);
+  // .text("Points")
 
   var barGroup = chartGroup.selectAll(".bar")
     .data(data["points"])
@@ -111,23 +125,15 @@ chartGroup.append("g")
     // .attr("class",function(d, i) { if(i%2 ==0) return "bar1"; else return "bar2";})
     .attr("width", barWidth/2)
     .attr("height", d => d * 95)
-    .attr("x", function(d, i) { if(i%2 ==0) return(i * barWidth + barSpacing); else return ((i-1) * barWidth + barWidth/2 + 7);})
+    .attr("x", function(d, i) { if(i%2 ==0) return(i * barWidth + barSpacing + 5); else return ((i-1) * barWidth + barWidth/2 + 12);})
     .attr("y", d => chartHeight - d * 95)
-  //   .on('mouseover', function (d, i) {
-  //       d3.select(this).transition()
-  //            .duration('50')
-  //            .attr('opacity', '.85')});
-  //  .on('mouseout', function (d, i) {
-  //       d3.select(this).transition()
-  //            .duration('50')
-  //            .attr('opacity', '1')});
-
 
     var toolTip = d3.tip()
     .attr("class", "tooltip")
-    .offset([10, 10])
+    .offset([-10, 0])
     .html(function(d) {
-      return (`<br>value: ${d}`);
+      return (d);
+      // return (`<br>value: ${d}`);
     });
 
   // Step 7: Create tooltip in the chart
@@ -150,6 +156,58 @@ chartGroup.append("g")
       toolTip.hide(data);
     });
 })
+
+chartGroup.selectAll("rect")
+  .transition()
+  .duration(900)
+  .attr("y", d => chartHeight - d * 95)
+  .attr("height", d => d * 95)
+  .delay(function(d,i){console.log(i) ; return(i*100)})
+
+
+  chartGroup.append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 0 - chartMargin.left + 5)
+      .attr("x", 0 - (chartHeight / 2) - 10)
+      .attr("dy", "1em")
+      .attr("class", "axisText")
+      .text("Likert scale(1-Very Poor to 5-Very Good)");
+
+    chartGroup.append("text")
+      .attr("transform", `translate(${chartWidth / 2}, ${chartHeight + 35})`)
+      .attr("class", "axisText")
+      .text("Years");
+
+      chartGroup.append('rect')  
+        .data(param1)                                   // NEW
+        .attr('width', 20)                          // NEW
+        .attr('height', 10)  
+        .attr('x', 700)              // NEW
+        .attr('y', 0)                         // NEW
+        .style('fill', dict_colors[param1])                                // NEW
+        .style('stroke', "grey");                                // NEW
+        
+        chartGroup.append('text')
+        // .data(param1)                                     // NEW
+        .attr('x', 725)              // NEW
+        .attr('y', 10)          // NEW
+        .text(param1);  
+        
+        chartGroup.append('rect')  
+        .data(param2)                                   // NEW
+        .attr('width', 20)                          // NEW
+        .attr('height', 10)  
+        .attr('x', 700)              // NEW
+        .attr('y', 15)                         // NEW
+        .style('fill', dict_colors[param2])                                // NEW
+        .style('stroke', "grey");                                // NEW
+        
+        chartGroup.append('text')
+        // .data(param1)                                     // NEW
+        .attr('x', 725)              // NEW
+        .attr('y', 25)          // NEW
+        .text(param2); 
+
 // .catch(function(error) {
 //   console.log(error);
 // });
