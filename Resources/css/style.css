@@ -1,0 +1,69 @@
+.navbar-brand img {
+    height: 2.5rem;
+    width: 4cm;
+  }
+.navbar-dark{
+background-color: black;
+}
+
+  header.masthead {
+    padding-top: 10.5rem;
+    padding-bottom: 6rem;
+    text-align: center;
+    color: #fff;
+    /* background-image: url("image_background.jpg"); */
+    background-color:black;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center center;
+    background-size: cover;
+  }
+  header.masthead .masthead-subheading {
+    font-size: 1.5rem;
+    font-style: italic;
+    line-height: 1.5rem;
+    margin-bottom: 25px;
+    font-family: "Droid Serif", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  }
+  header.masthead .masthead-heading {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 3rem;
+    margin-bottom: 2rem;
+    font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  }
+
+  .masthead-subheading-2{
+    font-size: 0.75rem;
+    text-align:center;
+    font-style: italic;
+    line-height: 0.75rem;
+    margin-bottom: 25px;
+    font-family: "Droid Serif", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  }
+  
+  .menu-current
+  {
+    font-weight: bold;
+    /* color: white; */
+    pointer-events: none;
+  }
+
+  @media (min-width: 768px) {
+    header.masthead {
+      padding-top: 17rem;
+      padding-bottom: 10.5rem;
+    }
+    header.masthead .masthead-subheading {
+      font-size: 2rem;
+      font-style: italic;
+      line-height: 2rem;
+      margin-bottom: 2rem;
+    }
+    header.masthead .masthead-heading {
+      font-size: 3.5rem;
+      font-weight: 700;
+      line-height: 3.5rem;
+      margin-bottom: 3.75rem;
+    }
+  }
