@@ -168,11 +168,11 @@ chartGroup.selectAll("rect")
 
   chartGroup.append("text")
       .attr("transform", "rotate(-90)")
-      .attr("y", 0 - chartMargin.left + 5)
+      .attr("y", 0 - chartMargin.left)
       .attr("x", 0 - (chartHeight / 2) - 10)
       .attr("dy", "1em")
       .attr("class", "axisText")
-      .text("Likert scale(1-Very Poor to 5-Very Good)");
+      .text("Likert scale (1-Very Poor to 5-Excellent)");
 
     chartGroup.append("text")
       .attr("transform", `translate(${chartWidth / 2}, ${chartHeight + 35})`)
