@@ -64,7 +64,7 @@ function submit_country()
 {
 
   var checkboxes = d3.selectAll("input").nodes()
-  console.log(checkboxes);
+  // console.log(checkboxes);
   for(var item = 0; item < checkboxes.length; item++)
   {
     checkboxes[item].checked = false; 
@@ -100,7 +100,7 @@ function submit_country()
 d3.json("http://localhost:5000/chart/"+selected_country).then(function(data) {
 
     // Once we get a response, send the data.features object to the createFeatures function
-    console.log(data['labels']);
+    // console.log(data['labels']);
 
     if(window.myNewChart1 != null){
       window.myNewChart1.destroy();
@@ -108,7 +108,7 @@ d3.json("http://localhost:5000/chart/"+selected_country).then(function(data) {
 
     var chart = document.getElementById("doughnut-chartcanvas-1")
 
-    console.log(window.myNewChart1);
+    // console.log(window.myNewChart1);
     // var a = [dict_colors[x] for (x in dict_colors)];
 
     var data1 = {
@@ -139,11 +139,12 @@ d3.json("http://localhost:5000/chart/"+selected_country).then(function(data) {
         title: {
           display: true,
           position:"top",
-          text: "Distribution of Indicators for " + selected_country,
-          labels: {
-                  fontColor: "#333",
-                  fontSize: 15
-                }
+          text: "Distribution of Indicators for " + selected_country + " (2019)",
+          fontSize: 15
+          // labels: {
+          //         fontColor: "#333",
+          //         fontSize: 15
+          //       }
         },
       },
       // elements: {
@@ -170,6 +171,8 @@ d3.json("http://localhost:5000/chart/"+selected_country).then(function(data) {
       data: data1,
       options: option1
     });
+
+    // window.myNewChart1.render();
   });
 
   var btn_toggle = document.getElementById("btn_toggle")
@@ -199,7 +202,7 @@ function submit_indicators()
   {
     if(checkboxes[item].checked)
     {
-      console.log(checkboxes[item].id);
+      // console.log(checkboxes[item].id);
       selected_indicators[index] = checkboxes[item].id;
       index ++;
     }
@@ -211,7 +214,7 @@ function submit_indicators()
     return;
   }
   
-  console.log(selected_indicators);
+  // console.log(selected_indicators);
 
   barChart(selected_country, selected_indicators[0],selected_indicators[1])
 }
@@ -237,7 +240,9 @@ function reset_event()
       }
     }
   }
-
+  
+  selected_country="";
+  
   // var selected_indicators = []
   // var index= 0
   var checkboxes = d3.selectAll("input").nodes()
