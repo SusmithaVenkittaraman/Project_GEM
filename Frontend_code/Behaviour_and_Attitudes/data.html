@@ -13,51 +13,81 @@
 </head>
 
 <body>
-        <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-            <div class="container">
-                <a class="navbar-brand js-scroll-trigger" href="#page-top">
-                    <img src="gem_logo_2.png" alt="" /></a>
-                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    Menu
-                    <i class="fas fa-bars ml-1"></i>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav text-uppercase ml-auto">
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              Behaviour and Attitudes
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                              <a class="dropdown-item" href="#">Definitions</a>
-                              <a class="dropdown-item" href="#">Dashboard</a>
-                              <a class="dropdown-item" href="#">Data</a>
-                            </div>
-                          </li>
-                          <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              Framework Conditions
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                              <a class="dropdown-item" href="#">Definitions</a>
-                              <a class="dropdown-item" href="#">Dashboard</a>
-                              <a class="dropdown-item" href="#">Data</a>
-                            </div>
-                          </li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#team">Team</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="../index.html">
+            <img src="gem_logo_2.png" alt="" /></a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            Menu
+            <i class="fas fa-bars ml-1"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav text-uppercase ml-auto">
+                <!-- <li class="nav-item"><a class="nav-link js-scroll-trigger " href="#about">About</a></li> -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Behaviour and Attitudes
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                      <a class="dropdown-item" href="definition.html">Definitions</a>
+                      <a class="dropdown-item" href="index.html">Dashboard</a>
+                      <a class="dropdown-item menu-current" href="data.html">Data</a>
+                    </div>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Framework Conditions
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                      <a class="dropdown-item" href="../Framework_conditions/definition.html">Definitions</a>
+                      <a class="dropdown-item" href="../Framework_conditions/index.html">Dashboard</a>
+                      <a class="dropdown-item" href="../Framework_conditions/data.html">Data</a>
+                    </div>
+                  </li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="../technologies.html">Technologies</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="../team.html">Team</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
     <!-- Masthead-->
     <section class="page-section" id="about">
-        <div class="container">
+        <div class="container-fluid">
             <br><br><br><br>
             <div class="text-lg-left" style="text-align: justify;">
                 <h2 class="section-heading text-uppercase">
                       Data</h2>
                       <br>
                 
+            </div>
+            <div class="col-md-10">
+              <div id="table-area" class="">
+                <table id="BA-table" class="table table-striped">
+                  <thead>
+                    <tr id="row">
+                      <th class="table-head">Code</th>
+                      <th class="table-head">Country</th>
+                      <th class="table-head">Year</th>
+                      <th class="table-head">Perceived Opportunities</th>
+                      <th class="table-head">Perceived Capabilities</th>
+                      <th class="table-head">Fear of Failure Rate</th>
+                      <th class="table-head">Entrepreneurial Intentions</th>
+                      <th class="table-head">TEA</th>
+                      <th class="table-head">Established Business Ownership</th>
+                      <th class="table-head">Entrepreneurial Employee Activity</th>
+                      <th class="table-head">Motivational Index</th>
+                      <th class="table-head">F/M TEA</th>
+                      <th class="table-head">F/M Opportunity Driven TEA</th>
+                      <th class="table-head">High Job Creation Expectation</th>
+                      <th class="table-head">Innovation</th>
+                      <th class="table-head">Business Services Sector</th>
+                      <th class="table-head">High Status to Successful Entrepreneurs</th>
+                      <th class="table-head">Entrepreneurship as a Good Career Choice</th>
+                    </tr>
+                  </thead>
+                  <tbody></tbody>
+                </table>
+              </div>
             </div>
         </div>
     </section>
@@ -66,4 +96,8 @@
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+ <!-- d3 JavaScript -->
+ <script src="https://d3js.org/d3.v5.min.js"></script>
+<script type="text/javascript" src="static/js/data_logic.js"></script>
 </html>

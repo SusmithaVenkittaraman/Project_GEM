@@ -87,7 +87,13 @@ function updatePlotly(){
 }
 
 function buttonclick(){
-    console.log("Reset clcicked");
+    //console.log("Reset clcicked");
+    var boxes = d3.selectAll("input.checkbox:checked");
+    boxes.each(function(){
+        if(this.value!='United States'){
+            $(this).prop('checked', false);
+        }
+    })
     //plotting initial chart
     filter_Data(data,['United States'],'Perceived_opportunities')
 }

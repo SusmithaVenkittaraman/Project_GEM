@@ -30,7 +30,7 @@ html {
   background: rgba(255, 255, 255, 0.8);
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-  width: 500px;
+  width: 525px;
   height: 110px;
 }
 
@@ -81,4 +81,13 @@ h1 {
 
 #country2 { border:2px solid #ccc; width:300px; height: 100px; overflow-y: scroll;}
 
+#row{width:500px; height: 100px; overflow-x: scroll !important;}
+
 #Parameters1{width: 150px;}
+
+.menu-current
+{
+  font-weight: bold;
+  color: lightgray !important;
+  pointer-events: none;
+}
