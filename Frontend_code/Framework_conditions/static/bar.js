@@ -127,6 +127,7 @@ chartGroup.append("g")
     .attr("height", d => d * 95)
     .attr("x", function(d, i) { if(i%2 ==0) return(i * barWidth + barSpacing + 5); else return ((i-1) * barWidth + barWidth/2 + 12);})
     .attr("y", d => chartHeight - d * 95)
+    // .attr('opacity', '.8');   
 
     var toolTip = d3.tip()
     .attr("class", "tooltip")
@@ -179,33 +180,33 @@ chartGroup.selectAll("rect")
       .text("Years");
 
       chartGroup.append('rect')  
-        .data(param1)                                   // NEW
-        .attr('width', 20)                          // NEW
+        .data(param1)                                    
+        .attr('width', 20)                           
         .attr('height', 10)  
-        .attr('x', 700)              // NEW
-        .attr('y', 0)                         // NEW
-        .style('fill', dict_colors[param1])                                // NEW
-        .style('stroke', "grey");                                // NEW
+        .attr('x', 600)               
+        .attr('y', 0)                          
+        .style('fill', dict_colors[param1])                                 
+        .style('stroke', "grey");                                 
         
         chartGroup.append('text')
-        // .data(param1)                                     // NEW
-        .attr('x', 725)              // NEW
-        .attr('y', 10)          // NEW
+        // .data(param1)                                      
+        .attr('x', 625)               
+        .attr('y', 10)           
         .text(param1);  
         
         chartGroup.append('rect')  
-        .data(param2)                                   // NEW
-        .attr('width', 20)                          // NEW
+        .data(param2)                                    
+        .attr('width', 20)                           
         .attr('height', 10)  
-        .attr('x', 700)              // NEW
-        .attr('y', 15)                         // NEW
-        .style('fill', dict_colors[param2])                                // NEW
-        .style('stroke', "grey");                                // NEW
+        .attr('x', 600)               
+        .attr('y', 15)                          
+        .style('fill', dict_colors[param2])                                 
+        .style('stroke', "grey");                                 
         
         chartGroup.append('text')
-        // .data(param1)                                     // NEW
-        .attr('x', 725)              // NEW
-        .attr('y', 25)          // NEW
+        // .data(param1)                                      
+        .attr('x', 625)               
+        .attr('y', 25)           
         .text(param2); 
 
 // .catch(function(error) {
