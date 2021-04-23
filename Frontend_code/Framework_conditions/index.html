@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  
+</html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Global Entrepreneurship Monitor</title>
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="../Resources/css/style.css">
+        <link rel="stylesheet" href="static/css/style.css" />
+      </head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand js-scroll-trigger">
+            <img src="../Resources/gem_logo_2.png" alt="" /></a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            Menu
+            <i class="fas fa-bars ml-1"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav text-uppercase ml-auto">
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="../index.html">About</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Behaviour and Attitudes
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                      <a class="dropdown-item" href="../BEHAVIOUR_AND_ATTITUDES/definition.html">Definitions</a>
+                      <a class="dropdown-item" href="../BEHAVIOUR_AND_ATTITUDES/index.html">Dashboard</a>
+                      <a class="dropdown-item" href="../BEHAVIOUR_AND_ATTITUDES/data.html">Data</a>
+                    </div>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Framework Conditions
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                      <a class="dropdown-item" href="definition.html">Definitions</a>
+                      <a class="dropdown-item  menu-current" href="index.html">Dashboard</a>
+                      <a class="dropdown-item" href="data.html">Data</a>
+                    </div>
+                  </li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="../team.html">Team</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<br><br><br><br>
+<div class="container-fluid" style="height: 100%; width: 95%;">
+  <table class="container-fluid" style="height: 650px;">
+    <tr class="row">
+      <td class="col-md-3">
+        <br>
+        <fieldset class="border p-3">      
+          <legend class="w-auto">Select</legend>  
+          <table style="padding: 0px;margin: 0px;">
+            <tr class="row">
+              <td class="col-md-5">
+                <div id="dropdown_country">
+                  <h6>Country:</h6>
+                  <select  id="selCountry" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: 15px;">
+                    <option class="dropdown-item">Select</option>
+                  </select>
+                </div>
+              </td >
+              <td class="col-md-7" style="text-align: right;">
+                <div>
+                <input type="submit" class="btn btn-outline-secondary" value="Submit" onclick="submit_country()"  />  
+                <input type="reset" class="btn btn-outline-secondary" value="Reset" onclick="reset_event()">
+              </div>
+              </td>
+            </tr>
+          </table> 
+          </fieldset> 
+      </td>
+      <td class="col-md-1" style="width: 10%;">
+      </td>
+      <td class="col-md-8" style="width: 80%; height: 50%; text-align: left; vertical-align: top;">
+        <div class="chart-container">
+          <canvas id="doughnut-chartcanvas-1" style="width: 60%; height: 50%; text-align: left;"></canvas>
+        </div>  
+        <div>
+          <br><br><br>
+          <input class="btn btn-outline-secondary" type="button" id="btn_toggle" value="Toggle Chart Type" onclick="changeType()"></input>
+        </div> 
+      </td>
+    </tr>
+  </table> 
+  <table class="container-fluid" style="height: 650px; vertical-align: top;">
+    <tr class="row">
+      <td class="col-md-3">
+          <br>
+          <fieldset class="border p-3">      
+            <legend class="w-auto">Select</legend>  
+            <table style="padding: 0px;margin: 0px;">
+              <tr class="row">
+                <td class="col-md-12">
+                <div style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: 14px;">
+                  <!-- width: 296.724px; height: 200px;  -->
+                  <h6>Indicators:</h6>
+                <div style="overflow: scroll;" id="selIndicators">    
+                </div>
+              </div>
+              <div style="text-align: right;">
+                <br>
+              <input class="btn btn-outline-secondary" type="submit" value="Submit" onclick="submit_indicators()" />   
+            </div>   
+              </td>
+              <!-- <td class="col-md-2">
+                <div>
+                 
+              </div>
+              </td> -->
+            </tr>
+          </table> 
+          </fieldset>
+        </td>
+          <td class="col-md-9">
+            <div id="bar">
+              <!-- We append our chart here. -->
+            </div>
+        </td>
+      </tr> 
+      </table>
+    </tr>
+  </table>
+</div> 
+  
+</body>
+ <!--Bootstrap-->
+ <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+<script src="static/config.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.1.1/dist/chart.min.js"></script>
+<script src="static/logic.js"></script>
+<!-- <script src="static/logic_d3.js"></script> -->
+<script src="static/bar.js"></script>
+</html>
