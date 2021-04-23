@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="UTF-8">
+  <title>Project GEM</title>
+
+  <!-- Bootstrap CDN -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="Resources/css/style.css" rel="stylesheet" />
+
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">
+            <img src="Resources/gem_logo_2.png" alt="" /></a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            Menu
+            <i class="fas fa-bars ml-1"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav text-uppercase ml-auto">
+                <!-- <li class="nav-item"><a class="nav-link js-scroll-trigger " href="#about">About</a></li> -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Behaviour and Attitudes
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                      <a class="dropdown-item" href="Behaviour_and_Attitudes/definition.html">Definitions</a>
+                      <a class="dropdown-item" href="Behaviour_and_Attitudes/index.html">Dashboard</a>
+                      <a class="dropdown-item" href="Behaviour_and_Attitudes/data.html">Data</a>
+                    </div>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Framework Conditions
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                      <a class="dropdown-item" href="Framework_conditions/definition.html">Definitions</a>
+                      <a class="dropdown-item" href="Framework_conditions/index.html">Dashboard</a>
+                      <a class="dropdown-item" href="Framework_conditions/data.html">Data</a>
+                    </div>
+                  </li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger menu-current" href="technologies.html">Technologies</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="team.html">Team</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+    <!-- Masthead-->
+    <section class="page-section" id="about">
+        <div class="container">
+            <br><br><br><br>
+            <div class="text-lg-left" style="text-align: justify;">
+               <h2 class="section-heading text-uppercase">
+                      Technologies</h2>
+                      <br>
+            </div>
+            <div>
+              <ul>
+                <li>
+                  <h5>Data Resources</h5>
+                    <ul>
+                      <li><strong>.csv files:</strong> Approx. 2000 * 15 records</li>
+                      <li><strong>geoJSON file:</strong> Contains polygon cordinates for countries with properties</li>
+                    </ul>
+                </li>
+                <br>
+                <li>
+                  <h5>Data Cleaning and Munging</h5>
+                  <ul>
+                    <li><strong>Jupyter file:</strong> Used pandas, numpy, JSON, SQLAlchemy libraries from python to Extract, Clean, Tranform and Load the data </li>
+                  </ul>
+                </li>
+                <br>
+                <li>
+                  <h5>Database</h5>
+                  <ul>
+                    <li><strong>PostgreSQL:</strong> Considered to use SQL as data was suitable for RDBMS</li>
+                  </ul>
+                </li>
+                <br>
+                <li>
+                  <h5>API</h5>
+                  <ul>
+                    <li><strong>Flask App:</strong> Developed app for managing HTTP request and rendering data based on requirements</li>
+                  </ul>
+                </li>
+                <br>
+                <li>
+                  <h5>Frontend</h5>
+                  <ul>
+                    <li>HTML, CSS, Bootstrap, Javascript for web pages</li>
+                  </ul>
+                </li>
+                <br>
+                <li>
+                  <h5>Visualizations</h5>
+                  <ul>
+                    <li><strong>Leaflet Map - Choropleth:</strong>To visualize the countries colored or patterned based on the behavior and attitude of entrepreneurs</li>
+                    <li><strong>Plotly - Time Series:</strong>To analyze the trend for the parameters across years for different countries.</li>
+                    <li><strong>Chart.js - Doughnut Chart:</strong>To visualize weightage of all given Indicators for selected country</li>
+                    <li><strong>D3 - Clustered Column Chart:</strong>To understand comparison between selected Indicators over period of time</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+        </div>
+    </section>
+    
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</html>

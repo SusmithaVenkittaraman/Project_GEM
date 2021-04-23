@@ -45,7 +45,7 @@ background-color: black;
   .menu-current
   {
     font-weight: bold;
-    /* color: white; */
+    color: lightgray !important;
     pointer-events: none;
   }
 
