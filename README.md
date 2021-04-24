@@ -52,7 +52,7 @@ HTML, CSS, Bootstrap, Javascript for web pages.
 
 Using these dashboards, local government officials, policymakers, stakeholders, business association leaders, and researchers can visualize the indicators that help in increasing the quality of the entrepreneurial ecosystem by benchmarking other countries and regions.
 
-## Getting Started
+## GETTING STARTED
 
 #### Folder Backend-code.
 
