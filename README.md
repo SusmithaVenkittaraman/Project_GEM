@@ -1,1 +1,52 @@
 # Project_GEM
+
+# WHY PROJECT-GEM (GLOBAL ENTREPRENEURSHIP MONITOR)?
+
+
+Fundamentally, entrepreneurs solve problems. But entrepreneurship happens within an economic, political, and cultural context that shapes new businesses to a remarkable degree. In one country, entrepreneurs are the highly educated elite choosing an aspirational path. In another, they are entrepreneurs-of-necessity because there are no other jobs. In some places, only the politically connected would consider launching a venture. In some, race, gender, or religion may be exclusionary, while in others, those are irrelevant factors. These differences across the regions are the compelling reasons for Project-GEM.
+
+The project helps in better understanding of,
+
+1.The perspectives of an entrepreneur on the country or the entrepreneurial ecosystem.
+2.The factors that give entrepreneurs the confidence that they can build successful, value-adding and profitable companies.
+3.The difference in government support and policies across different economies.
+
+# TECHNOLOGIES
+
+### Data Resources
+.csv files: Approx. 2000 * 15 records.
+geoJSON file: Contains polygon cordinates for countries with properties.
+
+### Data Cleaning and Munging
+Jupyter file: Used pandas, numpy, JSON, SQLAlchemy libraries from python to Extract, Clean, Tranform and Load the data.
+
+### Database
+PostgreSQL: Considered to use SQL as data was suitable for RDBMS.
+
+### API
+Flask App: Developed app for managing HTTP request and rendering data based on requirements.
+
+### Frontend
+HTML, CSS, Bootstrap, Javascript for web pages.
+
+### Visualizations
+Leaflet Map - Choropleth: To visualize the countries colored or patterned based on the behavior and attitude of entrepreneurs.
+Plotly - Time Series: To analyze the trend for the parameters across years for different countries.
+Chart.js - Doughnut Chart: To visualize weightage of all given Indicators for selected country.
+D3 - Clustered Column Chart: To understand comparison between selected Indicators over the period of time.
+
+# OUTCOME
+
+
+### Behaviour and Attitudes Dashboard:
+The decision to start a new business is the product of an individual’s attitudes,perceptions, and intentions, set within a social, cultural, and political context that could support or constrain that decision.
+The Behaviour and Attitudes dashboard gives a clear picture of perspectives the entrepreneurs have across various dimensions.
+The data from the past 20 years help stakeholders and the governments understand the trend over the years in different countries.
+The map visualizes the 2019 data across the world.
+
+### Framework Conditions Dashboard:
+GEM assesses the environment for enterprise by defining a number of specific Entrepreneurship Framework Conditions.
+These conditions, taken together, specify a local environment for enterprise that, for the person trying to start a new venture, will be supportive in some ways and constraining in others.
+Individually and collectively, these conditions influence how easy, or how difficult, it is to start a new business and then develop that new venture into a sustainable established business.
+
+Using these dashboards, local government officials, policymakers, stakeholders, business association leaders, and researchers can visualize the indicators that help in increasing the quality of the entrepreneurial ecosystem by benchmarking other countries and regions.
