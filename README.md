@@ -55,7 +55,7 @@ Using these dashboards, local government officials, policymakers, stakeholders, 
 
 #### Folder Frontend-code.
 
-1. Run the index.html(Home Page for the website).
+1. Run the index.html (Home Page for the website).
 2. Styles and images are in the resources.
 
 #### Folder Backend-code.
