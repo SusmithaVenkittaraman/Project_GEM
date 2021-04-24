@@ -47,6 +47,96 @@ function plotmap(){
 var parameter = d3.select("#parameters2");
 var parameter_value=parameter.property("value")
 
+console.log(parameter_value)
+
+d3.select("#definitions").html("")
+
+//Adding the definiton
+
+if(parameter_value==="Perceived_opportunities"){
+  let def=d3.select("#definitions");
+  let heading=def.append("h4")
+  heading.text("Perceived Opportunities Rate:")
+  let para=def.append("p")
+  para.text("Percentage of 18-64 population (individuals involved in any stage of entrepreneurial activity excluded) who see good opportunities to start a firm in the area where they live")
+}
+else if(parameter_value==="Perceived capabilities"){
+  let def=d3.select("#definitions");
+  let heading=def.append("h4")
+  heading.text("Perceived Capabilities Rate:")
+  let para=def.append("p")
+  para.text("Percentage of 18-64 population (individuals involved in any stage of entrepreneurial activity excluded) who believe they have the required skills and knowledge to start a business")
+}
+else if(parameter_value==="Fear of failure rate"){
+  let def=d3.select("#definitions");
+  let heading=def.append("h4")
+  heading.text("Fear of Failure Rate:")
+  let para=def.append("p")
+  para.text("Percentage of 18-64 population (individuals involved in any stage of entrepreneurial activity excluded) who indicate that fear of failure would prevent them from setting up a business")
+}
+else if(parameter_value==="Entrepreneurial intentions"){
+  let def=d3.select("#definitions");
+  let heading=def.append("h4")
+  heading.text("Entrepreneurial Intentions Rate:")
+  let para=def.append("p")
+  para.text("Percentage of 18-64 population (individuals involved in any stage of entrepreneurial activity excluded) who are latent entrepreneurs and who intend to start a business within three years")
+}
+else if(parameter_value==="Total early stage Entrepreneurial Activity"){
+  let def=d3.select("#definitions");
+  let heading=def.append("h4")
+  heading.text("Total early-stage Entrepreneurial Activity (TEA) Rate:")
+  let para=def.append("p")
+  para.text("Percentage of 18-64 population who are either a nascent entrepreneur or owner-manager of a new business")
+}
+else if(parameter_value==="Established Business Ownership"){
+  let def=d3.select("#definitions");
+  let heading=def.append("h4")
+  heading.text("Established Business Ownership Rate:")
+  let para=def.append("p")
+  para.text("Percentage of 18-64 population who are currently an owner-manager of an established business, i.e., owning and managing a running business that has paid salaries, wages, or any other payments to the owners for more than 42 months")
+}
+else if(parameter_value==="Entrepreneurial Employee Activity"){
+  let def=d3.select("#definitions");
+  let heading=def.append("h4")
+  heading.text("Entrepreneurial Employee Activity Rate:")
+  let para=def.append("p")
+  para.text("Rate of involvement of employees in entrepreneurial activities, such as developing or launching new goods or services, or setting up a new business unit, a new establishment or subsidiary")
+}
+else if(parameter_value==="Female Male TEA"){
+  let def=d3.select("#definitions");
+  let heading=def.append("h4")
+  heading.text("Female/Male TEA Ratio:")
+  let para=def.append("p")
+  para.text("Percentage of female 18-64 population who are either a nascent entrepreneur or owner-manager of a 'new business', divided by the equivalent percentage for their male counterparts")
+}
+else if(parameter_value==="High Job Creation Expectation"){
+  let def=d3.select("#definitions");
+  let heading=def.append("h4")
+  heading.text("High Job Creation Expectation Rate:")
+  let para=def.append("p")
+  para.text("Percentage of those involved in TEA who expect to create 6 or more jobs in 5 years")
+}
+else if(parameter_value==="Business Services Sector"){
+  let def=d3.select("#definitions");
+  let heading=def.append("h4")
+  heading.text("Business Services Sector Rate: ")
+  let para=def.append("p")
+  para.text("Percentage of those involved in TEA in the 'Business Services' sector - Information and Communication, Financial Intermediation and Real Estate, Professional Services or Administrative Services, as defined by the ISIC 4.0 Business Type Codebook")
+}
+else if(parameter_value==="High Status to Successful Entrepreneurs"){
+  let def=d3.select("#definitions");
+  let heading=def.append("h4")
+  heading.text("High Status to Successful Entrepreneurs Rate:")
+  let para=def.append("p")
+  para.text("Percentage of 18-64 population who agree with the statement that in their country, successful entrepreneurs receive high status")
+}
+else{
+  let def=d3.select("#definitions");
+  let heading=def.append("h4")
+  heading.text("Entrepreneurship as a Good Career Choice Rate:")
+  let para=def.append("p")
+  para.text("Percentage of 18-64 population who agree with the statement that in their country, most people consider starting a business as a desirable career choice")
+}
 
 //replacing the selection with hyphens
 parameter_value=parameter_value.replaceAll(' ', '_');
