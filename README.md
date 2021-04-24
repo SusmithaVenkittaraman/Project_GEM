@@ -64,7 +64,7 @@ Using these dashboards, local government officials, policymakers, stakeholders, 
 1. Run the index.html for the webpage.
 2. Styles and images are in the resources.
 
-##### Behaviour and Attitudes folder 
+##### Behaviour and Attitudes folder (Project_GEM\Frontend_code\Behaviour_and_Attitudes)
 
 1. index.html(the dashboard page). 
 2. static/js/logic.js - Javascript code for Plotly chart
@@ -73,5 +73,9 @@ Using these dashboards, local government officials, policymakers, stakeholders, 
 5. static/js/config.js - Please add your mapbox API key.
 6. All the syles is in static/css/style.css.
 
-##### Framework conditions folder
+##### Framework conditions folder (Project_GEM\Frontend_code\Framework_conditions)
 
+1. index.html(the dashboard page). 
+2. static/bar.js - Javascript code for D3 Clustered Column Chart
+3. static/logic.js - Javascript code for Chart.js Doughnut Chart and displaying data for selection.
+6. static/css/style.css - css styles for charts and Framework conditions dashboard
