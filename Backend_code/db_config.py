@@ -1,1 +1,1 @@
-password="Please add your password here"
+password="pratixa"
