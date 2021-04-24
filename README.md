@@ -53,16 +53,16 @@ Using these dashboards, local government officials, policymakers, stakeholders, 
 
 ## GETTING STARTED
 
+#### Folder Frontend-code.
+
+1. Run the index.html(Home Page for the website).
+2. Styles and images are in the resources.
+
 #### Folder Backend-code.
 
 1. GEM_Workbook-Jupyter notebook containing code for extraction, cleaning and loading the postgres Database.
 2. db_config.py- Add your postgres password before running the jupyter file.
 3. app.py - Flask App for the data used in the dashboards.
-
-#### Folder Frontend-code.
-
-1. Run the index.html for the webpage.
-2. Styles and images are in the resources.
 
 ##### Behaviour and Attitudes folder (Project_GEM\Frontend_code\Behaviour_and_Attitudes)
 
