@@ -1,6 +1,6 @@
 # Project_GEM
 
-# WHY PROJECT-GEM (GLOBAL ENTREPRENEURSHIP MONITOR)?
+## WHY PROJECT-GEM (GLOBAL ENTREPRENEURSHIP MONITOR)?
 
 
 Fundamentally, entrepreneurs solve problems. But entrepreneurship happens within an economic, political, and cultural context that shapes new businesses to a remarkable degree. In one country, entrepreneurs are the highly educated elite choosing an aspirational path. In another, they are entrepreneurs-of-necessity because there are no other jobs. In some places, only the politically connected would consider launching a venture. In some, race, gender, or religion may be exclusionary, while in others, those are irrelevant factors. These differences across the regions are the compelling reasons for Project-GEM.
@@ -11,7 +11,7 @@ The project helps in better understanding of,
 2.The factors that give entrepreneurs the confidence that they can build successful, value-adding and profitable companies.
 3.The difference in government support and policies across different economies.
 
-# TECHNOLOGIES
+## TECHNOLOGIES
 
 ### Data Resources
 1. .csv files: Approx. 2000 * 15 records.
@@ -36,7 +36,7 @@ HTML, CSS, Bootstrap, Javascript for web pages.
 3. Chart.js - Doughnut Chart: To visualize weightage of all given Indicators for selected country.
 4. D3 - Clustered Column Chart: To understand comparison between selected Indicators over the period of time.
 
-# OUTCOME
+## OUTCOME
 
 
 ### Behaviour and Attitudes Dashboard:
@@ -51,3 +51,28 @@ HTML, CSS, Bootstrap, Javascript for web pages.
 3. Individually and collectively, these conditions influence how easy, or how difficult, it is to start a new business and then develop that new venture into a sustainable established business.
 
 Using these dashboards, local government officials, policymakers, stakeholders, business association leaders, and researchers can visualize the indicators that help in increasing the quality of the entrepreneurial ecosystem by benchmarking other countries and regions.
+
+## Getting Started
+
+#### Folder Backend-code.
+
+1. GEM_Workbook-Jupyter notebook containing code for extraction, cleaning and loading the postgres Database.
+2. db_config.py- Add your postgres password before running the jupyter file.
+3. app.py - Flask App for the data used in the dashboards.
+
+#### Folder Frontend-code.
+
+1. Run the index.html for the webpage.
+2. Styles and images are in the resources.
+
+##### Behaviour and Attitudes folder 
+
+1. index.html(the dashboard page). 
+2. static/js/logic.js - Javascript code for Plotly chart
+3. static/js/map_logic.js and static/js/choropleth.js  -Javascript code for the map.
+4. static/js/data_logic.js -for diplaying data in the data tab.
+5. static/js/config.js - Please add your mapbox API key.
+6. All the syles is in static/css/style.css.
+
+##### Framework conditions folder
+
