@@ -6,10 +6,9 @@
 Fundamentally, entrepreneurs solve problems. But entrepreneurship happens within an economic, political, and cultural context that shapes new businesses to a remarkable degree. In one country, entrepreneurs are the highly educated elite choosing an aspirational path. In another, they are entrepreneurs-of-necessity because there are no other jobs. In some places, only the politically connected would consider launching a venture. In some, race, gender, or religion may be exclusionary, while in others, those are irrelevant factors. These differences across the regions are the compelling reasons for Project-GEM.
 
 The project helps in better understanding of,
-
-1.The perspectives of an entrepreneur on the country or the entrepreneurial ecosystem.
-2.The factors that give entrepreneurs the confidence that they can build successful, value-adding and profitable companies.
-3.The difference in government support and policies across different economies.
+1. The perspectives of an entrepreneur on the country or the entrepreneurial ecosystem.
+2. The factors that give entrepreneurs the confidence that they can build successful, value-adding and profitable companies.
+3. The difference in government support and policies across different economies.
 
 ## TECHNOLOGIES
 
