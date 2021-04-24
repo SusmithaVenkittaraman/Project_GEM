@@ -14,8 +14,9 @@ The project helps in better understanding of,
 # TECHNOLOGIES
 
 ### Data Resources
-.csv files: Approx. 2000 * 15 records.
-geoJSON file: Contains polygon cordinates for countries with properties.
+1. .csv files: Approx. 2000 * 15 records.
+2. geoJSON file: Contains polygon cordinates for countries with properties.
+
 
 ### Data Cleaning and Munging
 Jupyter file: Used pandas, numpy, JSON, SQLAlchemy libraries from python to Extract, Clean, Tranform and Load the data.
@@ -30,23 +31,23 @@ Flask App: Developed app for managing HTTP request and rendering data based on r
 HTML, CSS, Bootstrap, Javascript for web pages.
 
 ### Visualizations
-Leaflet Map - Choropleth: To visualize the countries colored or patterned based on the behavior and attitude of entrepreneurs.
-Plotly - Time Series: To analyze the trend for the parameters across years for different countries.
-Chart.js - Doughnut Chart: To visualize weightage of all given Indicators for selected country.
-D3 - Clustered Column Chart: To understand comparison between selected Indicators over the period of time.
+1. Leaflet Map - Choropleth: To visualize the countries colored or patterned based on the behavior and attitude of entrepreneurs.
+2. Plotly - Time Series: To analyze the trend for the parameters across years for different countries.
+3. Chart.js - Doughnut Chart: To visualize weightage of all given Indicators for selected country.
+4. D3 - Clustered Column Chart: To understand comparison between selected Indicators over the period of time.
 
 # OUTCOME
 
 
 ### Behaviour and Attitudes Dashboard:
-The decision to start a new business is the product of an individual’s attitudes,perceptions, and intentions, set within a social, cultural, and political context that could support or constrain that decision.
-The Behaviour and Attitudes dashboard gives a clear picture of perspectives the entrepreneurs have across various dimensions.
-The data from the past 20 years help stakeholders and the governments understand the trend over the years in different countries.
-The map visualizes the 2019 data across the world.
+1. The decision to start a new business is the product of an individual’s attitudes,perceptions, and intentions, set within a social, cultural, and political context that could support or constrain that decision.
+2. The Behaviour and Attitudes dashboard gives a clear picture of perspectives the entrepreneurs have across various dimensions.
+3. The data from the past 20 years help stakeholders and the governments understand the trend over the years in different countries.
+4. The map visualizes the 2019 data across the world.
 
 ### Framework Conditions Dashboard:
-GEM assesses the environment for enterprise by defining a number of specific Entrepreneurship Framework Conditions.
-These conditions, taken together, specify a local environment for enterprise that, for the person trying to start a new venture, will be supportive in some ways and constraining in others.
-Individually and collectively, these conditions influence how easy, or how difficult, it is to start a new business and then develop that new venture into a sustainable established business.
+1. GEM assesses the environment for enterprise by defining a number of specific Entrepreneurship Framework Conditions.
+2. These conditions, taken together, specify a local environment for enterprise that, for the person trying to start a new venture, will be supportive in some ways and constraining in others.
+3. Individually and collectively, these conditions influence how easy, or how difficult, it is to start a new business and then develop that new venture into a sustainable established business.
 
 Using these dashboards, local government officials, policymakers, stakeholders, business association leaders, and researchers can visualize the indicators that help in increasing the quality of the entrepreneurial ecosystem by benchmarking other countries and regions.
